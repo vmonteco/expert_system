@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-
+import src.parsing
 
 ################################################################################
 #                              Command parser                                  #
@@ -32,7 +32,7 @@ def run(filename, verbose, debug):
     """
     Empty function so far.
     """
-    pass
+    queries = src.parsing.parse(filename)
 
 
 ################################################################################
