@@ -8,6 +8,8 @@ import re
 
 space_regex = re.compile(' |\t|\n')
 
+
+
 def clean_line(l):
     """
     clean_line() removes possible comments and space characters (using
@@ -30,6 +32,10 @@ def parse(filename):
     with open(filename) as f:
         for line in f:
             line = clean_line(line) # removing comments and spaces
+            if state == 0: # First state : empty lines before rules
+                if line != '':
+                    state = 1
+            if state == 1: # Parsing rules
     return queries
 
 
